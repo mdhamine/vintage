@@ -37,7 +37,7 @@ export default function Home() {
     <>
       <div data-aos="fade-up">
         <div className="mt-8">
-          <h1 className="text-center text-balance text-4xl font-extrabold red-text">
+          <h1 className="text-center text-balance text-3xl font-bold red-text">
             Rabil Candy
           </h1>
         </div>
