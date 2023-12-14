@@ -37,8 +37,8 @@ export default function Home() {
     <>
       <div data-aos="fade-up">
         <div className="mt-8">
-          <h1 className="text-center text-balance text-4xl font-extrabold">
-            Shop your favorites
+          <h1 className="text-center text-balance text-4xl font-extrabold red-text">
+            Rabil Candy
           </h1>
         </div>
         <div className="grid place-items-center mt-4 space-y-2">
