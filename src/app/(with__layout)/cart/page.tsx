@@ -52,10 +52,10 @@ export default function Cart() {
     setCartState((prev) => {
       return prev.map((item) => {
         if (item.slug === itemSlug) {
-          if (!item.quantity) {
-            item.quantity = 1;
+          if (item.quantity !== 1) {
+            item.quantity = item?.quantity! - 1;
           } else {
-            item.quantity -= 1;
+            item.quantity = 1;
           }
         }
 
@@ -93,11 +93,12 @@ export default function Cart() {
     <div className="min-h-screen">
       <div>
         <p className="font-extrabold text-3xl text-brand-secondary">
-          Your Cart
+          {/* Your Cart */}
+          عربة التسوق الخاصة بك
         </p>
       </div>
       <div className="mt-8">
-        {isLoading && <p>Loading...</p>}
+        {isLoading && <p>جار التحميل...</p>}
         {products?.map((product) => {
           // if (!item) return null;
           const item = cartState.find((item) => item.slug === product?.slug);
@@ -114,20 +115,23 @@ export default function Cart() {
                   onClick={() => handleItemRemove(item?.slug)}
                   className="absolute left-1/2 -translate-x-1/2 whitespace-nowrap bottom-4 bg-brand-secondary font-semibold px-3 py-1 text-sm rounded-xl focus:ring focus:outline-none focus:ring-brand-400 transition-[box-shadow] focus:ring-offset-2"
                 >
-                  Remove from cart
+                  {/* Remove from cart */}
+                  إزالة من السلة
                 </button>
               </div>
               <p className="text-brand-secondary text-lg font-semibold mt-2">
                 {product?.name}
               </p>
-              <p>Color: {item?.color}</p>
-              <p>Size: {item?.size}</p>
+              <p>اللون: {item?.color}</p>
+              <p>الحجم: {item?.size}</p>
               <p>
-                Price: {product?.price} {product?.currency}
+                السعر: {Intl.NumberFormat("ar-SA").format(product?.price!)}{" "}
+                {product?.currency || "DA"}
               </p>
               <div className="mt-2 mb-6 flex items-center">
                 <label htmlFor="color" className="mr-4">
-                  Quantity
+                  {/* Quantity */}
+                  الكمية
                 </label>
                 <div className="flex gap-4 items-center">
                   <button
@@ -137,7 +141,9 @@ export default function Cart() {
                   >
                     <Minus size={16} />
                   </button>
-                  <span className="text-xl">{item?.quantity}</span>
+                  <span className="text-xl">
+                    {Intl.NumberFormat("ar-SA").format(item?.quantity!)}
+                  </span>
                   <button
                     type="button"
                     className="h-6 inline-grid place-items-center w-6 bg-brand-secondary-2 rounded-full"
@@ -153,9 +159,9 @@ export default function Cart() {
       </div>
       {cartState.length === 0 && !isLoading && (
         <>
-          <div className="mb-4">Your cart is empty.</div>
+          <div className="mb-4">سلة التسوق الخاصة بك فارغة</div>
           <Link href="/products">
-            <button className="btn-primary">Click here to shop</button>
+            <button className="btn-primary">انقر هنا للتسوق</button>
           </Link>
         </>
       )}
@@ -163,17 +169,24 @@ export default function Cart() {
         <>
           <div className="h-0.5 bg-brand-secondary/40 my-4" />
           <div className="flex justify-between items-center">
-            <span>Total</span>
+            <span>الإجمالي</span>
             <span>
-              {products.reduce((acc, item) => {
-                if (!item.price) return acc;
-                return acc + item?.price;
-              }, 0)}
+              {Intl.NumberFormat("ar-SA").format(
+                products.reduce((acc, item) => {
+                  const prod = cartState.find(
+                    (item) => item.slug === item?.slug
+                  );
+
+                  if (!item.price) return acc;
+                  return acc + item?.price * (prod?.quantity || 1);
+                }, 0)
+              )}
             </span>
           </div>
           <div className="mt-4">
             <button className="btn-primary" onClick={handleCheckout}>
-              Checkout
+              {/* Checkout */}
+              اتمام الشراء
             </button>
           </div>
         </>

@@ -35,21 +35,25 @@ export const ProductInfo = ({ product }: { product: IProduct }) => {
         <p className="mt-1">{product?.description}</p>
       </div>
 
-      <p>
-        {product.price} {product.currency}
-      </p>
+      {product.price && (
+        <p>
+          {Intl.NumberFormat("ar-SA").format(product.price)}
+          {product.currency}
+        </p>
+      )}
       {product?.sizes?.length !== 0 && (
         <p>Sizes: {product?.sizes?.join(", ")}</p>
       )}
       {product?.color?.length !== 0 && (
         <p>
-          Colors:{" "}
+          {/* Colors:{" "} */}
+          الألوان:{" "}
           <span className="capitalize">{product?.color?.join(", ")}</span>
         </p>
       )}
       {outOfStock && (
         <div className="text-center bg-brand-400/30 rounded-lg py-1 mt-2">
-          Out of stock
+          إنتهاء المخزون
         </div>
       )}
       <div className="mt-4 grid place-items-center">
@@ -58,7 +62,7 @@ export const ProductInfo = ({ product }: { product: IProduct }) => {
           className="disabled:opacity-50 disabled:pointer-events-none btn-primary"
           onClick={handlePopupOpen}
         >
-          {isAlreadyInCart ? "Update cart" : "Add to cart"}
+          {isAlreadyInCart ? "تحديث السلة" : "إضافة إلى السلة"}
         </button>
       </div>
     </>

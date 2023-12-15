@@ -42,7 +42,8 @@ export const ProductInfoForm = ({ product }: { product: IProduct }) => {
           return item;
         });
       });
-      toast.success(`Item updated in cart`);
+      // toast.success(`Item updated in cart`);
+      toast.success("تم تحديث العنصر في السلة");
     } else {
       setCartState((prev) => {
         if (!prev) return [];
@@ -57,7 +58,8 @@ export const ProductInfoForm = ({ product }: { product: IProduct }) => {
         ];
       });
 
-      toast.success(`Item successfully added to cart`);
+      // toast.success(`Item successfully added to cart`);
+      toast.success("تمت إضافة العنصر إلى السلة بنجاح");
     }
 
     setShowPointer(true);
@@ -69,7 +71,10 @@ export const ProductInfoForm = ({ product }: { product: IProduct }) => {
   return (
     <div className="bg-white w-11/12 p-4 rounded-xl">
       <div className="flex justify-between items-center">
-        <p className="font-semibold text-xl">Select options</p>
+        <p className="font-semibold text-xl">
+          {/* Select options */}
+          اختر الخيارات
+        </p>
         <button
           onClick={() => {
             setPopupState({
@@ -112,7 +117,8 @@ export const ProductInfoForm = ({ product }: { product: IProduct }) => {
         </div> */}
         <div className="mt-4 flex items-center">
           <label htmlFor="color" className="mr-4">
-            Quantity
+            {/* Quantity */}
+            الكمية
           </label>
           <div className="flex gap-4 items-center">
             <button
@@ -139,7 +145,7 @@ export const ProductInfoForm = ({ product }: { product: IProduct }) => {
           </div>
         </div>
         <button className="bg-brand-primary text-brand-secondary-2 border border-brand-secondary-2 mt-4 font-semibold px-3 py-1.5 text-sm rounded-xl focus:ring focus:outline-none focus:ring-brand-primary transition-[box-shadow] focus:ring-offset-2">
-          {isAlreadyInCart ? "Update Cart" : "Add to Cart"}
+          {isAlreadyInCart ? "تحديث السلة" : "أضف إلى السلة"}
         </button>
       </form>
     </div>

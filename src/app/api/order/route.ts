@@ -16,7 +16,8 @@ export async function POST(req: NextRequest) {
     if (orderedProducts.length === 0) {
       return NextResponse.json({
         success: false,
-        message: "Products might be out of stock. Please order again later.",
+        // message: "Products might be out of stock. Please order again later.",
+        message: "قد تكون المنتجات غير متوفرة حاليًا. يرجى إعادة الطلب لاحقًا.",
       });
     }
 
@@ -36,7 +37,7 @@ export async function POST(req: NextRequest) {
 
     const mailOptions = {
       from: process.env.SENDER_EMAIL,
-      to: ["wasape4325@getmola.com", process.env.RECEIVER_EMAIL || ""],
+      to: [process.env.RECEIVER_EMAIL || ""],
       // to: process.env.RECEIVER_EMAIL,
       subject: "New order on the website",
       text: `
@@ -72,7 +73,10 @@ export async function POST(req: NextRequest) {
 
         -----------------------------------------------
         Total: ${orderedProducts.reduce((acc, curr) => {
-          return acc + curr.price;
+          const orderFromCustomer = body.products.find(
+            (p: any) => p.slug === curr.slug
+          );
+          return acc + (curr.price * orderFromCustomer?.quantity || 1);
         }, 0)}
         Order Received on: ${new Date().toISOString()}
       `,
@@ -83,7 +87,8 @@ export async function POST(req: NextRequest) {
     if (info.rejected.length > 0) {
       return NextResponse.json({
         success: false,
-        message: "Couldnt send email. Please order again later.",
+        message: "تعذر إرسال البريد الإلكتروني. يرجى إعادة الطلب لاحقًا.",
+        // message: "Couldnt send email. Please order again later.",
       });
     }
 
@@ -101,13 +106,15 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({
       success: true,
-      message: "Order received successfully",
+      // message: "Order received successfully",
+      message: "تم استلام الطلب بنجاح",
     });
   } catch (error) {
     console.error("Error on order :", error);
     return NextResponse.json({
       success: false,
-      message: "Something went wrong. Please try again later.",
+      // message: "Something went wrong. Please try again later.",
+      message: "حدث خطأ ما. يرجى المحاولة مرة أخرى لاحقًا.",
     });
   }
 }

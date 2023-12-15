@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FormEvent, useState } from "react";
+import { toast } from "react-hot-toast";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
@@ -30,7 +31,8 @@ export default function Home() {
       fullname.value = "";
       message.value = "";
       setIsLoading(false);
-      alert("We have successfully received your message.");
+      // alert("We have successfully received your message.");
+      toast.success("لقد استلمنا رسالتك بنجاح.");
     }
   };
   return (
@@ -49,7 +51,7 @@ export default function Home() {
         <div className="grid place-items-center mt-4 space-y-2">
           <Link href="/products">
             <button className="bg-brand-primary border-2 border-brand-secondary-2 text-brand-secondary-2 font-semibold px-6 py-2 rounded-xl focus:ring focus:outline-none focus:ring-brand-primary transition-[box-shadow] focus:ring-offset-2">
-              Click here to Shop
+              اضغط هنا للتسوق
             </button>
           </Link>
         </div>
@@ -64,17 +66,15 @@ export default function Home() {
       </div>
       <div data-aos="fade-up" className="mt-8 grid place-items-center">
         <p className="font-extrabold text-2xl text-center underline decoration-underline-secondary text-brand-secondary">
-          Here&apos;s what our customers say
+          {/* Here&apos;s what our customers say */}
+          إليك ما يقوله عميلنا:
         </p>
         <div className="mt-8 mb-8 space-y-6 font-medium text-center text-brand-primary">
+          <p>محل حلويات رابيل هو مكان رائع لتلبية رغباتك في الحلوى.</p>
+          <p>لا تفوت هذا الجنة السكرية!</p>
           <p>
-            Rabil candy shop is a delightful place to satisfy your sweet tooth
-            cravings.
-          </p>
-          <p>Don&apos;t miss out on this sugary paradise!</p>
-          <p>
-            Rabil candy is absolutely amazing! I tried their candies and I must
-            say, they are absolutely delicious, definitely buying again!
+            حلوى رابيل رائعة بكل تأكيد! جربت حلوياتهم ويجب أن أقول، إنها لذيذة
+            بالفعل، سأقوم بالتأكيد بشراءها مرة أخرى!
           </p>
         </div>
       </div>
@@ -111,17 +111,22 @@ export default function Home() {
       </div> */}
       <div data-aos="fade-up" className="mt-8">
         <p className="text-brand-secondary text-center font-bold text-2xl">
-          Contact Us
+          {/* Contact Us */}
+          اتصل بنا
         </p>
         <div className="text-brand-secondary text-center flex justify-center gap-2">
-          <span>Phone</span>
-          <span>+98 937 748 45</span>
+          <span>
+            {/* Phone */}
+            الهاتف
+          </span>
+          <span>١٢٣٤-٥٥٥</span>
         </div>
         <div className="mx-auto mt-4 w-[90%] bg-[#7D423D] p-4 py-6 rounded-2xl">
           <form className="space-y-4" onSubmit={handleSubmit} name="contact">
             <div className="space-y-2">
               <label htmlFor="fullname" className="text-brand-secondary">
-                Name*
+                {/* Name* */}
+                اسم
               </label>
               <input
                 type="text"
@@ -129,11 +134,12 @@ export default function Home() {
                 placeholder="Fullname"
                 name="fullname"
                 id="fullname"
+                required
               />
             </div>
             <div className="space-y-2">
               <label htmlFor="message" className="text-brand-secondary">
-                Message*
+                رسالة
               </label>
               <textarea
                 rows={5}
@@ -141,6 +147,7 @@ export default function Home() {
                 placeholder="Enter your message"
                 name="message"
                 id="message"
+                required
               />
             </div>
             <div className="grid place-items-center">
@@ -148,7 +155,7 @@ export default function Home() {
                 disabled={isLoading}
                 className="bg-brand-secondary disabled:opacity-50 disabled:pointer-events-none mt-4 font-medium px-6 py-2.5 rounded-2xl focus:ring focus:outline-none focus:ring-brand-400 transition-[box-shadow] focus:ring-offset-2"
               >
-                {isLoading ? "Sendng..." : "Send Message"}
+                {isLoading ? "جاري الإرسال..." : "إرسال رسالة"}
               </button>
             </div>
           </form>

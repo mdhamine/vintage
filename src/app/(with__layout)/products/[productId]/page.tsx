@@ -34,7 +34,7 @@ export default async function ProductsDetail({
           <span>
             <ChevronLeft size={20} />
           </span>
-          <span>Back</span>
+          <span>رجوع</span>
         </span>
       </Link>
       <ProductInfo product={product} />

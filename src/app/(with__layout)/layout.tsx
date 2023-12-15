@@ -13,14 +13,14 @@ export default function AppLayout({ children }: { children: ReactNode }) {
     <>
       <nav className="flex h-20 z-10 justify-between items-center p-4">
         <Link href="/">
-          <p className="font-semibold text-brand-secondary">RABIL CANDY</p>
-          {/* <Image
+          {/* <p className="font-semibold text-brand-secondary">RABIL CANDY</p> */}
+          <Image
             alt=""
-            src="/images/site/logo.png"
+            src="/images/site/logo-transparent.png"
             className="align-left"
-            width={120}
+            width={48}
             height={40}
-          /> */}
+          />
         </Link>
         <Link href="/cart">
           <HeaderCartIcon />
@@ -35,7 +35,8 @@ export default function AppLayout({ children }: { children: ReactNode }) {
         </div>
         <div className="bg-[#7D423D]">
           <p className="text-center text-brand-secondary font-semibold">
-            Copyright &copy; {new Date().getFullYear()}
+            حقوق النشر &copy;{" "}
+            {new Date().toLocaleDateString("ar-SA", { year: "numeric" })}
           </p>
         </div>
       </footer>
