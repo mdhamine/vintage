@@ -3,7 +3,7 @@
 import { pointerAtom } from "@/atoms/pointer";
 import { cartAtom } from "@/components/common/Cart/atom";
 import { useAtom } from "jotai";
-import { ShoppingCart } from "lucide-react";
+import { ShoppingBag, ShoppingCart } from "lucide-react";
 import { useEffect } from "react";
 
 export const HeaderCartIcon = () => {
@@ -21,11 +21,11 @@ export const HeaderCartIcon = () => {
   return (
     <div className="relative">
       {cartState.length > 0 && (
-        <span className="bg-brand-600 rounded-full w-6 h-6 font-semibold text-sm grid place-items-center absolute -top-3 -right-2">
+        <span className="bg-brand-secondary-2 rounded-full w-6 h-6 font-semibold text-sm grid place-items-center absolute -top-3 -right-2">
           {cartState.length}
         </span>
       )}
-      <ShoppingCart />
+      <ShoppingBag className="text-brand-secondary" strokeWidth={2} />
       {showPointer && (
         <>
           {/* eslint-disable-next-line  */}

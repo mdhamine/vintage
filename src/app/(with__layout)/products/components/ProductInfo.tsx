@@ -4,6 +4,7 @@ import { popupAtom } from "@/components/common/Popup/atom";
 import { ProductInfoForm } from "@/components/products/ProductInfoForm";
 import { IProduct } from "@/data/products";
 import { useAtom } from "jotai";
+import Skeleton from "react-loading-skeleton";
 
 export const ProductInfo = ({ product }: { product: IProduct }) => {
   const [, setPopupState] = useAtom(popupAtom);
@@ -28,7 +29,9 @@ export const ProductInfo = ({ product }: { product: IProduct }) => {
         alt={product.name}
       />
       <div className="mb-4 mt-2">
-        <p className="text-brand-500 text-xl font-semibold">{product.name}</p>
+        <p className="text-brand-primary text-xl font-semibold">
+          {product.name}
+        </p>
         <p className="mt-1">{product?.description}</p>
       </div>
 

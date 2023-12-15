@@ -27,7 +27,7 @@ export default function ProductCard({ product }: { product: IProduct }) {
     >
       <Link href={url}>
         {isNew && (
-          <div className="absolute top-2 left-2 bg-pink-500/80 text-white px-2 py-1 rounded-xl text-sm">
+          <div className="absolute top-2 left-2 bg-brand-secondary/80 text-white px-2 py-1 rounded-xl text-sm">
             New
           </div>
         )}

@@ -1,18 +1,19 @@
-@import url("https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 * {
-  font-family: "Syne", sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 .masked-hero-image {
-  mask-image: url("/images/home/shape1.svg");
+  mask-image: url("/images/home/shape2.svg");
   mask-size: 100% 100%;
 }
 
 .btn-primary {
-  @apply bg-brand-400 font-semibold px-6 py-2 rounded-xl focus:ring focus:outline-none focus:ring-brand-400 transition-[box-shadow] focus:ring-offset-2;
+  @apply bg-brand-primary text-brand-secondary-2 border-2 border-brand-secondary-2 font-semibold px-6 py-2 rounded-xl focus:ring focus:outline-none focus:ring-brand-400 transition-[box-shadow] focus:ring-offset-2;
 }

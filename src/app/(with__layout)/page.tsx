@@ -37,32 +37,48 @@ export default function Home() {
     <>
       <div data-aos="fade-up">
         <div className="mt-8">
-          <h1 className="text-center text-balance text-3xl font-bold red-text">
+          <h1
+            style={{
+              fontFamily: "lobster",
+            }}
+            className="text-center text-brand-primary text-balance text-5xl"
+          >
             Rabil Candy
           </h1>
         </div>
         <div className="grid place-items-center mt-4 space-y-2">
           <Link href="/products">
-            <button className="bg-brand-400 font-semibold px-6 py-2 rounded-xl focus:ring focus:outline-none focus:ring-brand-400 transition-[box-shadow] focus:ring-offset-2">
+            <button className="bg-brand-primary border-2 border-brand-secondary-2 text-brand-secondary-2 font-semibold px-6 py-2 rounded-xl focus:ring focus:outline-none focus:ring-brand-primary transition-[box-shadow] focus:ring-offset-2">
               Click here to Shop
-            </button>
-          </Link>
-          <Link href="/cart">
-            <button className="border-[3px] border-brand-400 font-semibold px-6 py-1.5 rounded-xl focus:ring focus:outline-none focus:ring-brand-400 transition-[box-shadow] focus:ring-offset-2">
-              Go to cart
             </button>
           </Link>
         </div>
         <div className="masked-hero-image max-w-md w-3/4 mx-auto mt-8">
           <Image
-            src="/images/home/1.png"
+            src="/images/home/hero.png"
             alt="Hero Image"
             width={500}
             height={500}
           />
         </div>
       </div>
-      <div className="mt-8 grid place-items-center">
+      <div data-aos="fade-up" className="mt-8 grid place-items-center">
+        <p className="font-extrabold text-2xl text-center underline decoration-underline-secondary text-brand-secondary">
+          Here&apos;s what our customers say
+        </p>
+        <div className="mt-8 mb-8 space-y-6 font-medium text-center text-brand-primary">
+          <p>
+            Rabil candy shop is a delightful place to satisfy your sweet tooth
+            cravings.
+          </p>
+          <p>Don&apos;t miss out on this sugary paradise!</p>
+          <p>
+            Rabil candy is absolutely amazing! I tried their candies and I must
+            say, they are absolutely delicious, definitely buying again!
+          </p>
+        </div>
+      </div>
+      {/* <div className="mt-8 grid place-items-center">
         <p className="font-extrabold text-2xl text-center" data-aos="fade-up">
           Featured Products
         </p>
@@ -92,43 +108,49 @@ export default function Home() {
             data-aos="fade-up"
           />
         </div>
-      </div>
+      </div> */}
       <div data-aos="fade-up" className="mt-8">
-        <p className="text-brand-500 text-center font-bold text-2xl">
+        <p className="text-brand-secondary text-center font-bold text-2xl">
           Contact Us
         </p>
-        <div className="text-brand-600 text-center flex justify-center gap-2">
+        <div className="text-brand-secondary text-center flex justify-center gap-2">
           <span>Phone</span>
           <span>+98 937 748 45</span>
         </div>
-        <div className="mx-auto mt-4 w-[90%] bg-brand-300 p-4 py-6 rounded-2xl">
+        <div className="mx-auto mt-4 w-[90%] bg-[#7D423D] p-4 py-6 rounded-2xl">
           <form className="space-y-4" onSubmit={handleSubmit} name="contact">
-            <div>
-              <label htmlFor="fullname">Your fullname</label>
+            <div className="space-y-2">
+              <label htmlFor="fullname" className="text-brand-secondary">
+                Name*
+              </label>
               <input
                 type="text"
-                className="border-2 border-brand-300 py-2 h-10 rounded-lg px-3 w-full"
+                className="border-2 border-brand-secondary py-2 h-12 rounded-2xl px-3 w-full focus:outline-none"
                 placeholder="Fullname"
                 name="fullname"
                 id="fullname"
               />
             </div>
-            <div>
-              <label htmlFor="message">Your Message</label>
+            <div className="space-y-2">
+              <label htmlFor="message" className="text-brand-secondary">
+                Message*
+              </label>
               <textarea
                 rows={5}
-                className="border-2 border-brand-300 py-2 rounded-lg px-3 w-full"
-                placeholder="message"
+                className="border-2 border-brand-secondary text-brand-secondary py-2 rounded-2xl px-3 w-full"
+                placeholder="Enter your message"
                 name="message"
                 id="message"
               />
             </div>
-            <button
-              disabled={isLoading}
-              className="bg-brand-500 disabled:opacity-50 disabled:pointer-events-none mt-4 font-semibold px-3 py-1.5 text-sm rounded-xl focus:ring focus:outline-none focus:ring-brand-400 transition-[box-shadow] focus:ring-offset-2"
-            >
-              {isLoading ? "Sendng..." : "Send Message"}
-            </button>
+            <div className="grid place-items-center">
+              <button
+                disabled={isLoading}
+                className="bg-brand-secondary disabled:opacity-50 disabled:pointer-events-none mt-4 font-medium px-6 py-2.5 rounded-2xl focus:ring focus:outline-none focus:ring-brand-400 transition-[box-shadow] focus:ring-offset-2"
+              >
+                {isLoading ? "Sendng..." : "Send Message"}
+              </button>
+            </div>
           </form>
         </div>
       </div>

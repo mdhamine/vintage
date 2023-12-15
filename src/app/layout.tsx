@@ -9,6 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Ecommerce",
   description: "Ecommerce",
+  icons: ["/images/site/favicon.png"],
 };
 
 export default function RootLayout({
@@ -19,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <AosInit />
-      <body className={`${inter.className} bg-brand-200 text-black`}>
+      <body className={`${inter.className} bg-brand-background text-black`}>
         {children}
       </body>
     </html>

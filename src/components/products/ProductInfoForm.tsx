@@ -5,6 +5,7 @@ import { popupAtom } from "../common/Popup/atom";
 import { FormEvent, useState } from "react";
 import { Minus, Plus } from "lucide-react";
 import { pointerAtom } from "@/atoms/pointer";
+import { toast } from "react-hot-toast";
 
 export const ProductInfoForm = ({ product }: { product: IProduct }) => {
   const [cartState, setCartState] = useAtom(cartAtom);
@@ -21,8 +22,8 @@ export const ProductInfoForm = ({ product }: { product: IProduct }) => {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const size = document.forms["product-info" as any]["size"].value;
-    const color = document.forms["product-info" as any]["color"].value;
+    // const size = document.forms["product-info" as any]["size"].value;
+    // const color = document.forms["product-info" as any]["color"].value;
 
     if (isAlreadyInCart) {
       // we modify the cart if current item is already in cart
@@ -32,8 +33,8 @@ export const ProductInfoForm = ({ product }: { product: IProduct }) => {
           if (item.slug === product.slug) {
             return {
               ...item,
-              size,
-              color,
+              // size,
+              // color,
               quantity,
             };
           }
@@ -41,7 +42,7 @@ export const ProductInfoForm = ({ product }: { product: IProduct }) => {
           return item;
         });
       });
-      alert(`Item updated in cart`);
+      toast.success(`Item updated in cart`);
     } else {
       setCartState((prev) => {
         if (!prev) return [];
@@ -49,14 +50,14 @@ export const ProductInfoForm = ({ product }: { product: IProduct }) => {
           ...prev,
           {
             slug: product.slug!,
-            size,
-            color,
+            // size,
+            // color,
             quantity,
           },
         ];
       });
 
-      alert(`Item successfully added to cart`);
+      toast.success(`Item successfully added to cart`);
     }
 
     setShowPointer(true);
@@ -81,7 +82,7 @@ export const ProductInfoForm = ({ product }: { product: IProduct }) => {
         </button>
       </div>
       <form className="my-2" onSubmit={handleSubmit} name="product-info">
-        <div>
+        {/* <div>
           <label htmlFor="size" className="mr-4">
             Size
           </label>
@@ -92,8 +93,8 @@ export const ProductInfoForm = ({ product }: { product: IProduct }) => {
               </option>
             ))}
           </select>
-        </div>
-        <div className="mt-2">
+        </div> */}
+        {/* <div className="mt-2">
           <label htmlFor="color" className="mr-4">
             Color
           </label>
@@ -108,7 +109,7 @@ export const ProductInfoForm = ({ product }: { product: IProduct }) => {
               </option>
             ))}
           </select>
-        </div>
+        </div> */}
         <div className="mt-4 flex items-center">
           <label htmlFor="color" className="mr-4">
             Quantity
@@ -137,7 +138,7 @@ export const ProductInfoForm = ({ product }: { product: IProduct }) => {
             </button>
           </div>
         </div>
-        <button className="bg-brand-400 mt-4 font-semibold px-3 py-1.5 text-sm rounded-xl focus:ring focus:outline-none focus:ring-brand-400 transition-[box-shadow] focus:ring-offset-2">
+        <button className="bg-brand-primary text-brand-secondary-2 border border-brand-secondary-2 mt-4 font-semibold px-3 py-1.5 text-sm rounded-xl focus:ring focus:outline-none focus:ring-brand-primary transition-[box-shadow] focus:ring-offset-2">
           {isAlreadyInCart ? "Update Cart" : "Add to Cart"}
         </button>
       </form>

@@ -30,7 +30,7 @@ export default async function ProductsDetail({
   return (
     <>
       <Link href="/products">
-        <span className="inline-flex items-center text-sm py-1 px-1.5 space-x-1 font-semibold rounded-lg bg-brand-300/50">
+        <span className="inline-flex items-center text-sm py-1 px-1.5 space-x-1 font-semibold rounded-lg bg-brand-secondary/20">
           <span>
             <ChevronLeft size={20} />
           </span>

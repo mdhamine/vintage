@@ -92,7 +92,9 @@ export default function Cart() {
   return (
     <div className="min-h-screen">
       <div>
-        <p className="font-extrabold text-3xl">Your Cart</p>
+        <p className="font-extrabold text-3xl text-brand-secondary">
+          Your Cart
+        </p>
       </div>
       <div className="mt-8">
         {isLoading && <p>Loading...</p>}
@@ -110,12 +112,12 @@ export default function Cart() {
                 />
                 <button
                   onClick={() => handleItemRemove(item?.slug)}
-                  className="absolute left-1/2 -translate-x-1/2 whitespace-nowrap bottom-4 bg-brand-400 font-semibold px-3 py-1 text-sm rounded-xl focus:ring focus:outline-none focus:ring-brand-400 transition-[box-shadow] focus:ring-offset-2"
+                  className="absolute left-1/2 -translate-x-1/2 whitespace-nowrap bottom-4 bg-brand-secondary font-semibold px-3 py-1 text-sm rounded-xl focus:ring focus:outline-none focus:ring-brand-400 transition-[box-shadow] focus:ring-offset-2"
                 >
                   Remove from cart
                 </button>
               </div>
-              <p className="text-brand-500 text-lg font-semibold mt-2">
+              <p className="text-brand-secondary text-lg font-semibold mt-2">
                 {product?.name}
               </p>
               <p>Color: {item?.color}</p>
@@ -130,7 +132,7 @@ export default function Cart() {
                 <div className="flex gap-4 items-center">
                   <button
                     type="button"
-                    className="h-6 inline-grid place-items-center w-6 bg-brand-400 rounded-full"
+                    className="h-6 inline-grid place-items-center w-6 bg-brand-secondary-2 rounded-full"
                     onClick={() => handleQuantityDecrease(item?.slug)}
                   >
                     <Minus size={16} />
@@ -138,7 +140,7 @@ export default function Cart() {
                   <span className="text-xl">{item?.quantity}</span>
                   <button
                     type="button"
-                    className="h-6 inline-grid place-items-center w-6 bg-brand-400 rounded-full"
+                    className="h-6 inline-grid place-items-center w-6 bg-brand-secondary-2 rounded-full"
                     onClick={() => handleQuantityIncrease(product, item?.slug)}
                   >
                     <Plus size={16} />
@@ -159,7 +161,7 @@ export default function Cart() {
       )}
       {!isLoading && products.length !== 0 && (
         <>
-          <div className="h-0.5 bg-brand-300 my-4" />
+          <div className="h-0.5 bg-brand-secondary/40 my-4" />
           <div className="flex justify-between items-center">
             <span>Total</span>
             <span>
