@@ -51,7 +51,7 @@ export async function POST(req: NextRequest) {
         Address: ${body.address}
         Delivery Type: ${body.delivery}
 
-        -----------------------------------------------
+        ------------------------------------------
 
         Products Ordered:
         ${orderedProducts.map((product: any, index: number) => {
@@ -69,13 +69,17 @@ export async function POST(req: NextRequest) {
             `;
         })}
 
-        -----------------------------------------------
+        ------------------------------------------
+        
+        
         Total: ${orderedProducts.reduce((acc, curr) => {
           const orderFromCustomer = body.products.find(
             (p: any) => p.slug === curr.slug
           );
           return acc + (curr.price * orderFromCustomer?.quantity || 1);
         }, 0)}
+        
+        
         Order Received on: ${new Date().toISOString()}
       `,
     };
