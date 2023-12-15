@@ -36,14 +36,16 @@ export default function ProductCard({ product }: { product: IProduct }) {
             إنتهاء المخزون
           </div>
         )}
-        {/* eslint-disable-next-line  */}
-        <img
-          src={product.thumbnail}
-          alt={product.name}
-          className="rounded-xl"
-          height={500}
-          width={500}
-        />
+        <div className="h-48 grid place-items-center rounded-xl bg-white">
+          {/* eslint-disable-next-line  */}
+          <img
+            src={product.thumbnail}
+            alt={product.name}
+            className="rounded-xl object-cover h-48"
+            height={500}
+            width={500}
+          />
+        </div>
         <div className="p-1.5">
           <div className="line-clamp-2 font-semibold">{product.name}</div>
           {product?.sizes?.length !== 0 && (
