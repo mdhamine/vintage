@@ -125,8 +125,9 @@ export default function Cart() {
               <p>اللون: {item?.color}</p>
               <p>الحجم: {item?.size}</p>
               <p>
-                السعر: {Intl.NumberFormat("ar-SA").format(product?.price!)}{" "}
-                {product?.currency || "DA"}
+                السعر:
+                {/* {Intl.NumberFormat("ar-SA").format(product?.price!)}{" "} */}
+                {product?.price} {product?.currency || "DA"}
               </p>
               <div className="mt-2 mb-6 flex items-center">
                 <label htmlFor="color" className="mr-4">
@@ -142,7 +143,8 @@ export default function Cart() {
                     <Minus size={16} />
                   </button>
                   <span className="text-xl">
-                    {Intl.NumberFormat("ar-SA").format(item?.quantity!)}
+                    {/* {Intl.NumberFormat("ar-SA").format(item?.quantity!)} */}
+                    {item?.quantity}
                   </span>
                   <button
                     type="button"
@@ -171,7 +173,13 @@ export default function Cart() {
           <div className="flex justify-between items-center">
             <span>الإجمالي</span>
             <span>
-              {Intl.NumberFormat("ar-SA").format(
+              {products.reduce((acc, item) => {
+                const prod = cartState.find((item) => item.slug === item?.slug);
+
+                if (!item.price) return acc;
+                return acc + item?.price * (prod?.quantity || 1);
+              }, 0)}
+              {/* {Intl.NumberFormat("ar-SA").format(
                 products.reduce((acc, item) => {
                   const prod = cartState.find(
                     (item) => item.slug === item?.slug
@@ -180,7 +188,7 @@ export default function Cart() {
                   if (!item.price) return acc;
                   return acc + item?.price * (prod?.quantity || 1);
                 }, 0)
-              )}
+              )} */}
             </span>
           </div>
           <div className="mt-4">

@@ -35,8 +35,8 @@ export default function AppLayout({ children }: { children: ReactNode }) {
         </div>
         <div className="bg-[#7D423D]">
           <p className="text-center text-brand-secondary font-semibold">
-            حقوق النشر &copy;{" "}
-            {new Date().toLocaleDateString("ar-SA", { year: "numeric" })}
+            حقوق النشر &copy; {new Date().getFullYear()}
+            {/* {new Date().toLocaleDateString("ar-SA", { year: "numeric" })} */}
           </p>
         </div>
       </footer>

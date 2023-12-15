@@ -53,8 +53,9 @@ export default function ProductCard({ product }: { product: IProduct }) {
           )}
           {product.price && (
             <div className="text- mt-4">
-              السعر: {Intl.NumberFormat("ar-SA").format(product.price)}{" "}
-              {product.currency}
+              السعر :
+              {/*  { Intl.NumberFormat("ar-SA").format(product.price)}{" "} */}
+              {product.price} {product.currency}
             </div>
           )}
         </div>

@@ -37,7 +37,8 @@ export const ProductInfo = ({ product }: { product: IProduct }) => {
 
       {product.price && (
         <p>
-          {Intl.NumberFormat("ar-SA").format(product.price)}
+          {product.price}
+          {/* {Intl.NumberFormat("ar-SA").format(product.price)} */}
           {product.currency}
         </p>
       )}
