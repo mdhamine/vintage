@@ -122,8 +122,8 @@ export default function Cart() {
               <p className="text-brand-secondary text-lg font-semibold mt-2">
                 {product?.name}
               </p>
-              <p>اللون: {item?.color}</p>
-              <p>الحجم: {item?.size}</p>
+              {item?.color && <p>اللون: {item?.color}</p>}
+              {item?.size && <p>الحجم: {item?.size}</p>}
               <p>
                 السعر:
                 {/* {Intl.NumberFormat("ar-SA").format(product?.price!)}{" "} */}
