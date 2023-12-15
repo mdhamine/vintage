@@ -78,7 +78,7 @@ export const CheckoutForm = () => {
           <label htmlFor="fullname">Your fullname</label>
           <input
             type="text"
-            className="border-2 border-brand-300 py-2 h-10 rounded-lg px-3 w-full"
+            className="border-2 border-brand-secondary-2 py-2 h-10 rounded-lg px-3 w-full"
             placeholder="Fullname"
             name="fullname"
             id="fullname"
@@ -88,7 +88,7 @@ export const CheckoutForm = () => {
           <label htmlFor="phone">Your Phone</label>
           <input
             type="text"
-            className="border-2 border-brand-300 py-2 h-10 rounded-lg px-3 w-full"
+            className="border-2 border-brand-secondary-2 py-2 h-10 rounded-lg px-3 w-full"
             placeholder="Phone"
             name="phone"
             id="phone"
@@ -99,7 +99,7 @@ export const CheckoutForm = () => {
           <select
             name="address"
             id="address"
-            className="h-10 border-2 border-brand-300 rounded-lg px-3"
+            className="h-10 border-2 border-brand-secondary-2 rounded-lg px-3"
           >
             {SelectOptions.map((option) => (
               <option key={option} value={option}>
@@ -113,7 +113,7 @@ export const CheckoutForm = () => {
           <select
             name="delivery"
             id="delivery"
-            className="h-10 border-2 border-brand-300 rounded-lg px-3"
+            className="h-10 border-2 border-brand-secondary-2 rounded-lg px-3"
           >
             <select>
               <option value="type 1">Type 1</option>
@@ -171,7 +171,7 @@ export const CheckoutForm = () => {
         <div className="pt-4">
           <button
             disabled={submitting}
-            className="bg-brand-400 disabled:opacity-60 w-full font-semibold px-3 py-3 text-sm rounded-xl focus:ring focus:outline-none focus:ring-brand-400 transition-[box-shadow] focus:ring-offset-2"
+            className="bg-brand-primary text-brand-secondary-2 border border-brand-secondary-2 disabled:opacity-60 w-full font-semibold px-3 py-3 text-sm rounded-xl focus:ring focus:outline-none focus:ring-brand-400 transition-[box-shadow] focus:ring-offset-2"
           >
             {submitting ? "Submitting" : "Place Order"}
           </button>
