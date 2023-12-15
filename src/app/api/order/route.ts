@@ -41,7 +41,7 @@ export async function POST(req: NextRequest) {
       // to: process.env.RECEIVER_EMAIL,
       subject: "New order on the website",
       text: `
-        You have received a new order on your website.
+        You have received a new order.
 
         Here are the order details:
         -----------------------------------------------
@@ -63,8 +63,6 @@ export async function POST(req: NextRequest) {
                 Name: ${product.name}
                 Price: ${product.price}
                 Quantity: ${orderFromCustomer?.quantity}
-                Size: ${orderFromCustomer?.size}
-                Color: ${orderFromCustomer?.color}
                 Stock Remaining: ${
                   product.stock - orderFromCustomer?.quantity || 1
                 }
