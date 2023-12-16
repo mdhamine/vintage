@@ -99,23 +99,25 @@ export const ProductInfoForm = ({ product }: { product: IProduct }) => {
             ))}
           </select>
         </div> */}
-        <div className="mt-2">
-          <label htmlFor="color" className="mr-4">
-            {/* Color */}
-            النكهة
-          </label>
-          <select
-            className="bg-gray-200 rounded-lg p-1"
-            name="color"
-            id="color"
-          >
-            {product?.color?.map((color) => (
-              <option key={color} value={color}>
-                {color}
-              </option>
-            ))}
-          </select>
-        </div>
+        {product?.color?.length !== 0 && (
+          <div className="mt-2">
+            <label htmlFor="color" className="mr-4">
+              {/* Color */}
+              النكهة
+            </label>
+            <select
+              className="bg-gray-200 rounded-lg p-1"
+              name="color"
+              id="color"
+            >
+              {product?.color?.map((color) => (
+                <option key={color} value={color}>
+                  {color}
+                </option>
+              ))}
+            </select>
+          </div>
+        )}
         <div className="mt-4 flex items-center">
           <label htmlFor="color" className="mr-4">
             {/* Quantity */}

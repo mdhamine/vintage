@@ -10,7 +10,7 @@ async function getProducts(): Promise<IProduct[]> {
   await connectDB();
 
   // code fake 10 second waiting using set timeout
-  await new Promise((resolve) => setTimeout(resolve, 10000));
+  // await new Promise((resolve) => setTimeout(resolve, 10000));
 
   const products = await Product.find({}).sort({ createdAt: "asc" });
 
