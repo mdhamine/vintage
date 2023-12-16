@@ -2,8 +2,8 @@
 const nextConfig = {
   env: {
     DB_URL:
-      // "mongodb+srv://polok:d2zBoAn2O2VAFgvD@cluster0.qjrhokc.mongodb.net/ecom?retryWrites=true&w=majority",
-      "mongodb+srv://test:rabilcandy@cluster0.wk291zy.mongodb.net/ecom-rabilcandy?retryWrites=true&w=majority",
+      // "mongodb+srv://<rabil>:<rabil>@cluster0.wk291zy.mongodb.net/?retryWrites=true&w=majority",
+      "mongodb+srv://<rabil>:<rabil>@cluster0.wk291zy.mongodb.net/?retryWrites=true&w=majority",
     SENDER_PASSWORD: "wuip jfxb bmgh twcv",
     SENDER_EMAIL: "cyn.webservices@gmail.com",
     RECEIVER_EMAIL: "shopcandy2002@gmail.com",
