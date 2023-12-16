@@ -41,7 +41,7 @@ export async function POST(req: NextRequest) {
       // to: process.env.RECEIVER_EMAIL,
       subject: "New order on the website",
       text: `
-        You have received a new order on your website.
+        You have received a new order.
 
         Here are the order details:
         -----------------------------------------------
@@ -51,7 +51,7 @@ export async function POST(req: NextRequest) {
         Address: ${body.address}
         Delivery Type: ${body.delivery}
 
-        -----------------------------------------------
+        ------------------------------------------
 
         Products Ordered:
         ${orderedProducts.map((product: any, index: number) => {
@@ -63,21 +63,23 @@ export async function POST(req: NextRequest) {
                 Name: ${product.name}
                 Price: ${product.price}
                 Quantity: ${orderFromCustomer?.quantity}
-                Size: ${orderFromCustomer?.size}
-                Color: ${orderFromCustomer?.color}
                 Stock Remaining: ${
                   product.stock - orderFromCustomer?.quantity || 1
                 }
             `;
         })}
 
-        -----------------------------------------------
+        ------------------------------------------
+        
+        
         Total: ${orderedProducts.reduce((acc, curr) => {
           const orderFromCustomer = body.products.find(
             (p: any) => p.slug === curr.slug
           );
           return acc + (curr.price * orderFromCustomer?.quantity || 1);
         }, 0)}
+        
+        
         Order Received on: ${new Date().toISOString()}
       `,
     };
