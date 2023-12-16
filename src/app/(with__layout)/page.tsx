@@ -119,7 +119,7 @@ export default function Home() {
             {/* Phone */}
             الهاتف
           </span>
-          <span>١٢٣٤-٥٥٥</span>
+          <span>+924235235235</span>
         </div>
         <div className="mx-auto mt-4 w-[90%] bg-[#7D423D] p-4 py-6 rounded-2xl">
           <form className="space-y-4" onSubmit={handleSubmit} name="contact">
