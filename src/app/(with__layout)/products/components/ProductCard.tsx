@@ -57,7 +57,7 @@ export default function ProductCard({ product }: { product: IProduct }) {
         <div className="flex aspect-square">
           {/* eslint-disable-next-line  */}
           <img
-            className="object-cover min-w-full min-h-full w-full h-full"
+            className="object-cover min-w-full min-h-full w-full h-full rounded-xl"
             src={product.thumbnail}
             alt={product.name}
           />
