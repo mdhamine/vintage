@@ -122,12 +122,12 @@ export default function Cart() {
               <p className="text-brand-secondary text-lg font-semibold mt-2">
                 {product?.name}
               </p>
-              {item?.color && <p>اللون: {item?.color}</p>}
+              {/* flavour  */}
+              {item?.color && <p>النكهة: {item?.color}</p>}
               {item?.size && <p>الحجم: {item?.size}</p>}
               <p>
-                السعر:
+                {product?.price} {product?.currency || "DA"}: السعر
                 {/* {Intl.NumberFormat("ar-SA").format(product?.price!)}{" "} */}
-                {product?.price} {product?.currency || "DA"}
               </p>
               <div className="mt-2 mb-6 flex items-center">
                 <label htmlFor="color" className="mr-4">

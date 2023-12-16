@@ -48,7 +48,9 @@ export const ProductInfo = ({ product }: { product: IProduct }) => {
       {product?.color?.length !== 0 && (
         <p>
           {/* Colors:{" "} */}
-          الألوان:{" "}
+          {/* الألوان:{" "} */}
+          {/* flavour  */}
+          النكهة
           <span className="capitalize">{product?.color?.join(", ")}</span>
         </p>
       )}

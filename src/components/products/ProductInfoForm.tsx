@@ -23,7 +23,7 @@ export const ProductInfoForm = ({ product }: { product: IProduct }) => {
     e.preventDefault();
 
     // const size = document.forms["product-info" as any]["size"].value;
-    // const color = document.forms["product-info" as any]["color"].value;
+    const color = document.forms["product-info" as any]["color"]?.value;
 
     if (isAlreadyInCart) {
       // we modify the cart if current item is already in cart
@@ -34,7 +34,7 @@ export const ProductInfoForm = ({ product }: { product: IProduct }) => {
             return {
               ...item,
               // size,
-              // color,
+              color,
               quantity,
             };
           }
@@ -52,7 +52,7 @@ export const ProductInfoForm = ({ product }: { product: IProduct }) => {
           {
             slug: product.slug!,
             // size,
-            // color,
+            color,
             quantity,
           },
         ];
@@ -99,9 +99,10 @@ export const ProductInfoForm = ({ product }: { product: IProduct }) => {
             ))}
           </select>
         </div> */}
-        {/* <div className="mt-2">
+        <div className="mt-2">
           <label htmlFor="color" className="mr-4">
-            Color
+            {/* Color */}
+            النكهة
           </label>
           <select
             className="bg-gray-200 rounded-lg p-1"
@@ -114,7 +115,7 @@ export const ProductInfoForm = ({ product }: { product: IProduct }) => {
               </option>
             ))}
           </select>
-        </div> */}
+        </div>
         <div className="mt-4 flex items-center">
           <label htmlFor="color" className="mr-4">
             {/* Quantity */}
