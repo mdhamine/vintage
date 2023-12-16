@@ -98,6 +98,7 @@ export const CheckoutForm = () => {
             placeholder="Phone"
             name="phone"
             id="phone"
+            required
           />
         </div>
         <div className="flex flex-col">
@@ -107,21 +108,6 @@ export const CheckoutForm = () => {
             id="address"
             className="h-10 border-2 border-brand-secondary-2 rounded-lg px-3"
           >
-            {SelectOptions.map((option) => (
-              <option key={option} value={option}>
-                {option}
-              </option>
-            ))}
-          </select>
-        </div>
-        <div className="flex flex-col">
-          <label htmlFor="delivery">نوع التوصيل</label>
-          <select
-            name="delivery"
-            id="delivery"
-            className="h-10 border-2 border-brand-secondary-2 rounded-lg px-3"
-          >
-            <option value="type 1">Type 1</option>
             <option value="Adrar">Adrar</option>
             <option value="Chlef">Chlef</option>
             <option value="Laghouat">Laghouat</option>
@@ -170,6 +156,66 @@ export const CheckoutForm = () => {
             <option value="Aïn Témouchent">Aïn Témouchent</option>
             <option value="Ghardaïa">Ghardaïa</option>
             <option value="Relizane">Relizane</option>
+          </select>
+        </div>
+        <div className="flex flex-col">
+          <label htmlFor="delivery">نوع التوصيل</label>
+          <select
+            name="delivery"
+            id="delivery"
+            className="h-10 border-2 border-brand-secondary-2 rounded-lg px-3"
+          >
+            <option value="Stop desk">Stop desk</option>
+            <option value="Domicile">Domicile</option>
+            {/* <option value="type 1">Type 1</option>
+            <option value="Adrar">Adrar</option>
+            <option value="Chlef">Chlef</option>
+            <option value="Laghouat">Laghouat</option>
+            <option value="Oum El Bouaghi">Oum El Bouaghi</option>
+            <option value="Batna">Batna</option>
+            <option value="Béjaïa">Béjaïa</option>
+            <option value="Biskra">Biskra</option>
+            <option value="Béchar">Béchar</option>
+            <option value="Blida">Blida</option>
+            <option value="Bouira">Bouira</option>
+            <option value="Tamanrasset">Tamanrasset</option>
+            <option value="Tébessa">Tébessa</option>
+            <option value="Tlemcen">Tlemcen</option>
+            <option value="Tiaret">Tiaret</option>
+            <option value="Tizi Ouzou">Tizi Ouzou</option>
+            <option value="Algiers">Algiers</option>
+            <option value="Djelfa">Djelfa</option>
+            <option value="Jijel">Jijel</option>
+            <option value="Sétif">Sétif</option>
+            <option value="Saida">Saida</option>
+            <option value="Skikda">Skikda</option>
+            <option value="Sidi Bel Abbès">Sidi Bel Abbès</option>
+            <option value="Annaba">Annaba</option>
+            <option value="Guelma">Guelma</option>
+            <option value="Constantine">Constantine</option>
+            <option value="Médéa">Médéa</option>
+            <option value="Mostaganem">Mostaganem</option>
+            <option value="M'Sila">M&apos;Sila</option>
+            <option value="Mascara">Mascara</option>
+            <option value="Ouargla">Ouargla</option>
+            <option value="Oran">Oran</option>
+            <option value="El Bayadh">El Bayadh</option>
+            <option value="Illizi">Illizi</option>
+            <option value="Bordj Bou Arréridj">Bordj Bou Arréridj</option>
+            <option value="Boumerdès">Boumerdès</option>
+            <option value="El Tarf">El Tarf</option>
+            <option value="Tindouf">Tindouf</option>
+            <option value="Tissemsilt">Tissemsilt</option>
+            <option value="El Oued">El Oued</option>
+            <option value="Khenchela">Khenchela</option>
+            <option value="Souk Ahras">Souk Ahras</option>
+            <option value="Tipaza">Tipaza</option>
+            <option value="Mila">Mila</option>
+            <option value="Aïn Defla">Aïn Defla</option>
+            <option value="Naâma">Naâma</option>
+            <option value="Aïn Témouchent">Aïn Témouchent</option>
+            <option value="Ghardaïa">Ghardaïa</option>
+            <option value="Relizane">Relizane</option> */}
           </select>
         </div>
         <div className="pt-4">
