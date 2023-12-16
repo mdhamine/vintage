@@ -178,7 +178,8 @@ export default function Cart() {
 
                 if (!item.price) return acc;
                 return acc + item?.price * (prod?.quantity || 1);
-              }, 0)}
+              }, 0)}{" "}
+              DA
               {/* {Intl.NumberFormat("ar-SA").format(
                 products.reduce((acc, item) => {
                   const prod = cartState.find(
