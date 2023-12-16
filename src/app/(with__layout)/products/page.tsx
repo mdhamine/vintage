@@ -23,9 +23,9 @@ export default async function ProductsPage() {
 
   return (
     <div className="min-h-screen">
-      <div className="grid grid-cols-2 sm:grid-cols3 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
         {data?.map((product) => (
-          <ProductCard key={product.id} product={product} />
+          <ProductCard key={product._id} product={product} />
         ))}
       </div>
     </div>
