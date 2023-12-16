@@ -25,7 +25,7 @@ export default function ProductCard({ product }: { product: IProduct }) {
       className="bg-brand-100 relative rounded-xl opverflow-hidden"
       key={product.slug}
     >
-      <Link href={url}>
+      <Link href={url} className="">
         {isNew && (
           <div className="absolute top-2 left-2 bg-brand-secondary/80 text-white px-2 py-1 rounded-xl text-sm">
             جديد
@@ -36,8 +36,8 @@ export default function ProductCard({ product }: { product: IProduct }) {
             إنتهاء المخزون
           </div>
         )}
-        <div className="h-48 grid place-items-center rounded-xl bg-white">
-          {/* eslint-disable-next-line  */}
+        {/* <div className="grid place-items-center rounded-xl bg-white">
+          // eslint-disable-next-line 
           <img
             src={product.thumbnail}
             alt={product.name}
@@ -45,7 +45,24 @@ export default function ProductCard({ product }: { product: IProduct }) {
             height={500}
             width={500}
           />
+        </div> */}
+        {/* <div className="relative flex-grow pb-2/3 overflow-hidden">
+          eslint-disable-next-line 
+          <img
+            className="absolute object-cover min-w-full min-h-full w-full h-full"
+            src={product.thumbnail}
+            alt={product.name}
+          />
+        </div> */}
+        <div className="flex aspect-square">
+          {/* eslint-disable-next-line  */}
+          <img
+            className="object-cover min-w-full min-h-full w-full h-full"
+            src={product.thumbnail}
+            alt={product.name}
+          />
         </div>
+
         <div className="p-1.5">
           <div className="line-clamp-2 font-semibold">{product.name}</div>
           {product?.sizes?.length !== 0 && (
