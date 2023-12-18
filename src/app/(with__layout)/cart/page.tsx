@@ -83,7 +83,7 @@ export default function Cart() {
   const handleCheckout = () => {
     setPopupState({
       open: true,
-      component: <CheckoutForm />,
+      component: <CheckoutForm setProducts={setProducts} />,
     });
   };
 

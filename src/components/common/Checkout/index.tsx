@@ -1,12 +1,17 @@
 import { useAtom } from "jotai";
-import { FormEvent, useState } from "react";
+import { Dispatch, FormEvent, SetStateAction, useState } from "react";
 import { cartAtom } from "../Cart/atom";
 import { popupAtom } from "../Popup/atom";
 import { SelectOptions } from "@/data/select";
 import { Plus } from "lucide-react";
 import { toast } from "react-hot-toast";
+import { IProduct } from "@/data/products";
 
-export const CheckoutForm = () => {
+export const CheckoutForm = ({
+  setProducts,
+}: {
+  setProducts: Dispatch<SetStateAction<IProduct[]>>;
+}) => {
   const [cartState, setCartState] = useAtom(cartAtom);
   const [, setPopupState] = useAtom(popupAtom);
   const [submitting, setSubmitting] = useState(false);
@@ -40,14 +45,17 @@ export const CheckoutForm = () => {
     });
 
     const json = await res.json();
+    // const json = { success: true, message: "ok" };
 
     // alert(
     //   json?.message ||
     //     `We have received your order and will contact you shortly`
     // );
-    alert(json?.message || "لقد تلقينا طلبك وسنتواصل معك قريبًا.");
+    toast.success(json?.message || "لقد تلقينا طلبك وسنتواصل معك قريبًا.");
+    // alert(json?.message || "لقد تلقينا طلبك وسنتواصل معك قريبًا.");
 
     if (json?.success) {
+      setProducts([]);
       setCartState([]);
     }
 
