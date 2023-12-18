@@ -173,12 +173,23 @@ export default function Cart() {
           <div className="flex justify-between items-center">
             <span>الإجمالي</span>
             <span>
-              {products.reduce((acc, item) => {
+              {/* {products.reduce((acc, item) => {
+                console.log("here");
                 const prod = cartState.find((item) => item.slug === item?.slug);
-
+                console.log(prod);
                 if (!item.price) return acc;
+                console.log("down from return");
+                console.log(acc + item?.price * (prod?.quantity || 1));
                 return acc + item?.price * (prod?.quantity || 1);
-              }, 0)}{" "}
+              }, 0)}{" "} */}
+              {cartState.reduce((acc, item) => {
+                const prod = products.find(
+                  (product) => product.slug === item?.slug
+                );
+
+                if (!prod?.price) return acc;
+                return acc + prod?.price * (item?.quantity || 1);
+              }, 0)}
               DA
               {/* {Intl.NumberFormat("ar-SA").format(
                 products.reduce((acc, item) => {
