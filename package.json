@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "aos": "^2.3.4",
+    "framer-motion": "^10.16.16",
     "jotai": "^2.6.0",
     "lucide-react": "^0.294.0",
     "mongoose": "^8.0.3",
