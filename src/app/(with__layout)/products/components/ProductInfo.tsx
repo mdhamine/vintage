@@ -50,13 +50,15 @@ export const ProductInfo = ({ product }: { product: IProduct }) => {
           {/* Colors:{" "} */}
           {/* الألوان:{" "} */}
           {/* flavour  */}
-          النكهة
+          {/* النكهة */}
+          Colors
           <span className="capitalize">{product?.color?.join(", ")}</span>
         </p>
       )}
       {outOfStock && (
         <div className="text-center bg-brand-400/30 rounded-lg py-1 mt-2">
-          إنتهاء المخزون
+          {/* إنتهاء المخزون */}
+          Out of stock
         </div>
       )}
       <div className="mt-4 grid place-items-center">
@@ -65,7 +67,8 @@ export const ProductInfo = ({ product }: { product: IProduct }) => {
           className="disabled:opacity-50 disabled:pointer-events-none btn-primary"
           onClick={handlePopupOpen}
         >
-          {isAlreadyInCart ? "تحديث السلة" : "إضافة إلى السلة"}
+          {/* {isAlreadyInCart ? "تحديث السلة" : "إضافة إلى السلة"} */}
+          {isAlreadyInCart ? "Update Cart" : "Add to cart"}
         </button>
       </div>
     </>

@@ -15,5 +15,5 @@
 }
 
 .btn-primary {
-  @apply bg-brand-primary text-brand-secondary-2 border-2 border-brand-secondary-2 font-semibold px-6 py-2 rounded-xl focus:ring focus:outline-none focus:ring-brand-400 transition-[box-shadow] focus:ring-offset-2;
+  @apply bg-brand-primary text-brand-secondary-2 border-2 border-brand-secondary-2 font-semibold px-6 py-2 rounded-xl focus:ring focus:outline-none focus:ring-brand-primary transition-[box-shadow] focus:ring-offset-2;
 }

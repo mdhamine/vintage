@@ -16,9 +16,10 @@ export default function AppLayout({ children }: { children: ReactNode }) {
           {/* <p className="font-semibold text-brand-secondary">RABIL CANDY</p> */}
           <Image
             alt=""
-            src="/images/site/logo-transparent.png"
+            // src="/images/site/logo-transparent.png"
+            src="/images/site/vintage.png"
             className="align-left"
-            width={48}
+            width={40}
             height={40}
           />
         </Link>
@@ -28,15 +29,14 @@ export default function AppLayout({ children }: { children: ReactNode }) {
       </nav>
       <main className="p-4 ">{children}</main>
       <footer>
-        <div className="flex pb-12 pt-6 text-brand-secondary justify-between items-center w-1/2 mx-auto">
+        <div className="flex pb-12 pt-6 text-brand-primary justify-between items-center w-1/2 mx-auto">
           <Facebook />
           <Instagram />
           <Tiktok />
         </div>
-        <div className="bg-[#7D423D]">
+        <div className="bg-brand-primary">
           <p className="text-center text-brand-secondary font-semibold">
-            حقوق النشر &copy; {new Date().getFullYear()}
-            {/* {new Date().toLocaleDateString("ar-SA", { year: "numeric" })} */}
+            Copyright &copy; {new Date().getFullYear()}
           </p>
         </div>
       </footer>

@@ -9,11 +9,11 @@ export default function ProductsPageLoading() {
           .fill(" ")
           .map((el, idx) => (
             <SkeletonTheme
-              baseColor="#feddf1"
-              highlightColor="#fbbce37a"
+              baseColor="#FFFFFF60"
+              highlightColor="#c9c9c9bf"
               key={idx}
             >
-              <div className="bg-brand-100 relative rounded-xl opverflow-hidden">
+              <div className="bg-gray-400/30 relative rounded-xl opverflow-hidden">
                 <>
                   <div className="h-32 p-2">
                     <Skeleton className="block h-28 rounded-xl" />

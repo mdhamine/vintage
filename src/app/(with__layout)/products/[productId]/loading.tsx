@@ -3,7 +3,12 @@ import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 export default function ProductInfoLoading() {
   return (
     <>
-      <SkeletonTheme baseColor="#feddf1" highlightColor="#fbbce37a">
+      <SkeletonTheme
+        //  baseColor="#feddf1" highlightColor="#fbbce37a"
+
+        baseColor="#FFFFFF60"
+        highlightColor="#c9c9c9bf"
+      >
         <div>
           <Skeleton className="block h-60 rounded-[40px] mt-8" />
         </div>

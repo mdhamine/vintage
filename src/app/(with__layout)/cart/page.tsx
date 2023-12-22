@@ -92,13 +92,14 @@ export default function Cart() {
   return (
     <div className="min-h-screen">
       <div>
-        <p className="font-extrabold text-3xl text-brand-secondary">
-          {/* Your Cart */}
-          عربة التسوق الخاصة بك
+        <p className="font-extrabold text-3xl text-brand-primary">
+          Your Cart
+          {/* عربة التسوق الخاصة بك */}
         </p>
       </div>
       <div className="mt-8">
-        {isLoading && <p>جار التحميل...</p>}
+        {/* {isLoading && <p>جار التحميل...</p>} */}
+        {isLoading && <p>Loading...</p>}
         {products?.map((product) => {
           // if (!item) return null;
           const item = cartState.find((item) => item.slug === product?.slug);
@@ -115,24 +116,25 @@ export default function Cart() {
                   onClick={() => handleItemRemove(item?.slug)}
                   className="absolute left-1/2 -translate-x-1/2 whitespace-nowrap bottom-4 bg-brand-secondary font-semibold px-3 py-1 text-sm rounded-xl focus:ring focus:outline-none focus:ring-brand-400 transition-[box-shadow] focus:ring-offset-2"
                 >
-                  {/* Remove from cart */}
-                  إزالة من السلة
+                  Remove from cart
+                  {/* إزالة من السلة */}
                 </button>
               </div>
-              <p className="text-brand-secondary text-lg font-semibold mt-2">
+              <p className="text-brand-primary text-lg font-semibold mt-2">
                 {product?.name}
               </p>
               {/* flavour  */}
-              {item?.color && <p>النكهة: {item?.color}</p>}
-              {item?.size && <p>الحجم: {item?.size}</p>}
+              {item?.color && <p>Color: {item?.color}</p>}
+              {item?.size && <p>Size: {item?.size}</p>}
               <p>
-                {product?.price} {product?.currency || "DA"}: السعر
+                Price:
+                {product?.price} {product?.currency || "USD"}
                 {/* {Intl.NumberFormat("ar-SA").format(product?.price!)}{" "} */}
               </p>
               <div className="mt-2 mb-6 flex items-center">
                 <label htmlFor="color" className="mr-4">
-                  {/* Quantity */}
-                  الكمية
+                  Quantity
+                  {/* الكمية */}
                 </label>
                 <div className="flex gap-4 items-center">
                   <button
@@ -161,9 +163,15 @@ export default function Cart() {
       </div>
       {cartState.length === 0 && !isLoading && (
         <>
-          <div className="mb-4">سلة التسوق الخاصة بك فارغة</div>
+          <div className="mb-4">
+            {/* سلة التسوق الخاصة بك فارغة */}
+            Your cart is empty
+          </div>
           <Link href="/products">
-            <button className="btn-primary">انقر هنا للتسوق</button>
+            <button className="btn-primary">
+              {/* انقر هنا للتسوق */}
+              Click here to shop
+            </button>
           </Link>
         </>
       )}
@@ -171,7 +179,10 @@ export default function Cart() {
         <>
           <div className="h-0.5 bg-brand-secondary/40 my-4" />
           <div className="flex justify-between items-center">
-            <span>الإجمالي</span>
+            <span>
+              {/* الإجمالي */}
+              Total
+            </span>
             <span>
               {/* {products.reduce((acc, item) => {
                 console.log("here");
@@ -190,7 +201,7 @@ export default function Cart() {
                 if (!prod?.price) return acc;
                 return acc + prod?.price * (item?.quantity || 1);
               }, 0)}
-              DA
+              USD
               {/* {Intl.NumberFormat("ar-SA").format(
                 products.reduce((acc, item) => {
                   const prod = cartState.find(
@@ -205,8 +216,8 @@ export default function Cart() {
           </div>
           <div className="mt-4">
             <button className="btn-primary" onClick={handleCheckout}>
-              {/* Checkout */}
-              اتمام الشراء
+              Checkout
+              {/* اتمام الشراء */}
             </button>
           </div>
         </>

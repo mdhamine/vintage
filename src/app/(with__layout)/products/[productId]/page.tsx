@@ -9,9 +9,12 @@ import { connectDB } from "@/app/api/_db/connectDB";
 
 async function getProductById(productId: string) {
   await connectDB();
+  // await new Promise((res) => setTimeout(() => res(1), 10_000_000));
   const product = await Product.findOne({ slug: productId }).sort({
     createdAt: "asc",
   });
+
+  // write code to wait 5 seconds
 
   return JSON.parse(JSON.stringify(product));
 }
@@ -34,7 +37,10 @@ export default async function ProductsDetail({
           <span>
             <ChevronLeft size={20} />
           </span>
-          <span>رجوع</span>
+          <span>
+            Back
+            {/* رجوع */}
+          </span>
         </span>
       </Link>
       <ProductInfo product={product} />

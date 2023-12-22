@@ -16,8 +16,8 @@ export async function POST(req: NextRequest) {
     if (orderedProducts.length === 0) {
       return NextResponse.json({
         success: false,
-        // message: "Products might be out of stock. Please order again later.",
-        message: "قد تكون المنتجات غير متوفرة حاليًا. يرجى إعادة الطلب لاحقًا.",
+        message: "Products might be out of stock. Please order again later.",
+        // message: "قد تكون المنتجات غير متوفرة حاليًا. يرجى إعادة الطلب لاحقًا.",
       });
     }
 
@@ -89,8 +89,8 @@ export async function POST(req: NextRequest) {
     if (info.rejected.length > 0) {
       return NextResponse.json({
         success: false,
-        message: "تعذر إرسال البريد الإلكتروني. يرجى إعادة الطلب لاحقًا.",
-        // message: "Couldnt send email. Please order again later.",
+        // message: "تعذر إرسال البريد الإلكتروني. يرجى إعادة الطلب لاحقًا.",
+        message: "Couldnt send email. Please order again later.",
       });
     }
 
@@ -108,15 +108,15 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({
       success: true,
-      // message: "Order received successfully",
-      message: "تم استلام الطلب بنجاح",
+      message: "Order received successfully",
+      // message: "تم استلام الطلب بنجاح",
     });
   } catch (error) {
     console.error("Error on order :", error);
     return NextResponse.json({
       success: false,
-      // message: "Something went wrong. Please try again later.",
-      message: "حدث خطأ ما. يرجى المحاولة مرة أخرى لاحقًا.",
+      message: "Something went wrong. Please try again later.",
+      // message: "حدث خطأ ما. يرجى المحاولة مرة أخرى لاحقًا.",
     });
   }
 }

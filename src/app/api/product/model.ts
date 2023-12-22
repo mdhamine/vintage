@@ -14,6 +14,12 @@ const productSchema = new Schema(
     description: { type: String },
     new: { type: Boolean, default: false },
     stock: { type: Number, default: 0 },
+    select: [
+      {
+        key: { type: String },
+        value: { type: [String] },
+      },
+    ],
   },
   { timestamps: true }
 );

@@ -28,12 +28,12 @@ export default function ProductCard({ product }: { product: IProduct }) {
       <Link href={url} className="">
         {isNew && (
           <div className="absolute top-2 left-2 bg-brand-secondary/80 text-white px-2 py-1 rounded-xl text-sm">
-            جديد
+            New
           </div>
         )}
         {isOutOfStock && (
           <div className="absolute bg-pink-100/60 inset-0 grid place-items-center text-brand-500 font-semibold">
-            إنتهاء المخزون
+            Out of stock
           </div>
         )}
         {/* <div className="grid place-items-center rounded-xl bg-white">
@@ -67,13 +67,12 @@ export default function ProductCard({ product }: { product: IProduct }) {
           <div className="line-clamp-2 font-semibold">{product.name}</div>
           {product?.sizes?.length !== 0 && (
             <div className="text-sm mt-2">
-              الحجم: {product?.sizes?.map((size) => size).join(", ")}
+              Size: {product?.sizes?.map((size) => size).join(", ")}
             </div>
           )}
           {product.price && (
             <div className="text- mt-4">
-              {product.price} {product.currency} : السعر
-              {/*  { Intl.NumberFormat("ar-SA").format(product.price)}{" "} */}
+              Price: {product.price} {product.currency}
             </div>
           )}
         </div>

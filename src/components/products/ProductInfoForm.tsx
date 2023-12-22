@@ -42,8 +42,8 @@ export const ProductInfoForm = ({ product }: { product: IProduct }) => {
           return item;
         });
       });
-      // toast.success(`Item updated in cart`);
-      toast.success("تم تحديث العنصر في السلة");
+      toast.success(`Item updated in cart`);
+      // toast.success("تم تحديث العنصر في السلة");
     } else {
       setCartState((prev) => {
         if (!prev) return [];
@@ -58,8 +58,8 @@ export const ProductInfoForm = ({ product }: { product: IProduct }) => {
         ];
       });
 
-      // toast.success(`Item successfully added to cart`);
-      toast.success("تمت إضافة العنصر إلى السلة بنجاح");
+      toast.success(`Item successfully added to cart`);
+      // toast.success("تمت إضافة العنصر إلى السلة بنجاح");
     }
 
     setShowPointer(true);
@@ -72,8 +72,8 @@ export const ProductInfoForm = ({ product }: { product: IProduct }) => {
     <div className="bg-white w-11/12 p-4 rounded-xl">
       <div className="flex justify-between items-center">
         <p className="font-semibold text-xl">
-          {/* Select options */}
-          اختر الخيارات
+          Select options
+          {/* اختر الخيارات */}
         </p>
         <button
           onClick={() => {
@@ -102,8 +102,8 @@ export const ProductInfoForm = ({ product }: { product: IProduct }) => {
         {product?.color?.length !== 0 && (
           <div className="mt-2">
             <label htmlFor="color" className="mr-4">
-              {/* Color */}
-              النكهة
+              Color
+              {/* النكهة */}
             </label>
             <select
               className="bg-gray-200 rounded-lg p-1"
@@ -120,8 +120,8 @@ export const ProductInfoForm = ({ product }: { product: IProduct }) => {
         )}
         <div className="mt-4 flex items-center">
           <label htmlFor="color" className="mr-4">
-            {/* Quantity */}
-            الكمية
+            Quantity
+            {/* الكمية */}
           </label>
           <div className="flex gap-4 items-center">
             <button
@@ -148,7 +148,7 @@ export const ProductInfoForm = ({ product }: { product: IProduct }) => {
           </div>
         </div>
         <button className="bg-brand-primary text-brand-secondary-2 border border-brand-secondary-2 mt-4 font-semibold px-3 py-1.5 text-sm rounded-xl focus:ring focus:outline-none focus:ring-brand-primary transition-[box-shadow] focus:ring-offset-2">
-          {isAlreadyInCart ? "تحديث السلة" : "أضف إلى السلة"}
+          {isAlreadyInCart ? "Update Cart" : "Add to Cart"}
         </button>
       </form>
     </div>
