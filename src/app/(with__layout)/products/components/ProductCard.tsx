@@ -22,7 +22,7 @@ export default function ProductCard({ product }: { product: IProduct }) {
   return (
     <div
       data-aos="fade-up"
-      className="bg-brand-100 relative rounded-xl opverflow-hidden"
+      className="bg-brand-secondary/20 relative rounded-xl opverflow-hidden"
       key={product.slug}
     >
       <Link href={url} className="">
@@ -32,7 +32,7 @@ export default function ProductCard({ product }: { product: IProduct }) {
           </div>
         )}
         {isOutOfStock && (
-          <div className="absolute bg-pink-100/60 inset-0 grid place-items-center text-brand-500 font-semibold">
+          <div className="absolute bg-gray-100/60 inset-0 grid place-items-center text-brand-primary font-semibold">
             Out of stock
           </div>
         )}
@@ -83,7 +83,7 @@ export default function ProductCard({ product }: { product: IProduct }) {
             e.stopPropagation();
             handlePopupOpen(product);
           }}
-          className="absolute bg-pink-100 rounded-full right-2 top-2"
+          className="absolute bg-gray-100 rounded-full right-2 top-2"
         >
           <Plus size={20} />
         </button>
